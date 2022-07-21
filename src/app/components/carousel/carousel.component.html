@@ -1,0 +1,32 @@
+<div class="carousel carousel-dark slide" id="{{groupName}}" data-bs-ride="carousel">
+    <div class="carousel-indicators" id="{{groupName}}" >
+        <button type="button" 
+        *ngFor="let item of carouselData"
+        [attr.data-bs-target]="'#'+ groupName" 
+        [attr.data-bs-slide-to]="carouselData.indexOf(item)" 
+        aria-current="true"
+        [attr.aria-current]="carouselData.indexOf(item)==0"
+        [attr.arial-label]="'Slide ' + carouselData.indexOf(item)"
+        [ngClass]="{active: carouselData.indexOf(item)==0}"></button>
+        <!-- <button type="button" [attr.data-bs-target]="'#'+ groupName" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" [attr.data-bs-target]="'#'+ groupName" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+    </div>
+    <div class="carousel-inner">
+                <app-card 
+                class="carousel-item"
+                *ngFor="let grade of carouselData"
+                [cardData]="grade"
+                [ngClass]="{active: carouselData.indexOf(grade)==0}"
+                [default]="carouselData[0].name"
+                [groupName]="groupName"
+                ></app-card>
+    </div>
+    <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#'+ groupName" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#'+ groupName" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+    </button>
+</div>

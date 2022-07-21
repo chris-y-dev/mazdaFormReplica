@@ -1,0 +1,17 @@
+<label (click)="onClick()">
+    <input 
+    type="radio" 
+    name="{{groupName}}" 
+    value="{{ cardData.name }}"
+    [(ngModel)]="value"
+    (change)="selectionChange(cardData.name)"
+    id="{{ cardData.name }}">
+    <div class="card">
+        <h3>{{cardData.name}}</h3>
+        <ul>
+            <li *ngFor="let description of cardData.description" class="card-additions">{{ description }}</li>
+        </ul>
+    </div>
+</label>
+
+

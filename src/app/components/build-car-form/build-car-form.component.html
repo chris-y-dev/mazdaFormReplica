@@ -1,0 +1,56 @@
+<!-- <form>
+    <
+</form> -->
+<h1>Car-Builder Form</h1>
+<p *ngIf="formData">{{ formData.details.model }}</p>
+<form *ngIf="formData">
+    <div id="displayInput"></div>
+    <div>
+        <app-button-block 
+        [choices]="formData.body"
+        [groupName]="'selectedBody'"
+        [default]="formData.body[0]"
+        name="selectedBody"
+        ></app-button-block>
+    </div>
+    <div>
+        <app-carousel 
+        [carouselData]="formData.grade"
+        [groupName]="'selectedGrade'"
+        ></app-carousel>
+    </div>
+
+    <div>
+        <app-button-block 
+        [choices]="formData.drivetrain"
+        [groupName]="'selectedDrivetrain'"
+        [default]="formData.drivetrain[0]"
+        name="selectedDrivetrain"
+        ></app-button-block>
+    </div>
+    <div>
+        <app-button-block 
+        [choices]="formData.transmission"
+        [groupName]="'selectedTransmission'"
+        [default]="formData.transmission[0]"
+        name="selectedTransmission"
+        ></app-button-block>
+    </div>
+    <div>
+        <app-carousel 
+        [carouselData]="formData.engine"
+        [groupName]="'selectedEngine'"
+        [slides]="formData.engine.length"
+        ></app-carousel>
+    </div>
+    <div>
+    </div>
+   
+    <div>
+        <app-exterior
+        [exteriorData]="formData.exterior"
+        [groupName]="selectedExterior"
+        [default]="formData.exterior[0]"></app-exterior>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-danger"/>
+</form>
