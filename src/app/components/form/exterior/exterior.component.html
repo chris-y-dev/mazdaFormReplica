@@ -1,5 +1,5 @@
 
-    <label *ngFor="let exterior of exteriorData" class="d-flex justify-content-between exteriorItem">
+    <label *ngFor="let exterior of exteriorData" class="d-flex justify-content-between exteriorItem" for="{{groupName}}">
         <div style="display: inline-block;">
             {{exterior.name}}
             <input 
@@ -7,6 +7,7 @@
             name="{{groupName}}"
             value={{exterior.name}}
             [(ngModel)]="value"
+            (click)="onClick(exterior.name)"
             (change)="onSelect(exterior.name)"/>
         </div>
         <div style="display: inline-block;" *ngIf="exterior.price!=null">

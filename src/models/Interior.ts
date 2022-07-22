@@ -1,4 +1,4 @@
-export interface Wheels {
+export interface Interior {
     name: string;
     price: number;
 }

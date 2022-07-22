@@ -70,20 +70,26 @@
             {
                 "name": "White",
                 "price": null
-            }],
-        "interior": ["Black Leather"],
+            }
+        ],
+        "interior": [
+            {
+                "name": "Black Leather",
+                "price": null
+            }
+        ],
         "wheels": [
             {
                 "name": "18 Inch Alloy Wheel",
-                "additionalPrice": 0
+                "price": 0
             },
             {
                 "name": "18 Inch Silver Alloy Wheel",
-                "additionalPrice": 2024
+                "price": 2024
             },
             {
                 "name": "18 Inch Chrome Wheel",
-                "additionalPrice": 2104
+                "price": 2104
             }
         ]
     }

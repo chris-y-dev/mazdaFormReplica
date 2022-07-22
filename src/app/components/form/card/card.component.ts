@@ -18,6 +18,7 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.default)
     this.selectionChange(this.default)
     console.log("Initial " + this.default)
   }

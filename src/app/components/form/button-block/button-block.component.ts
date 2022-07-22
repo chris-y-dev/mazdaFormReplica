@@ -12,7 +12,7 @@ import { Body } from 'src/models/Body';
 export class ButtonBlockComponent implements OnInit {
   @Input() choices: any;
   @Input() groupName: string;
-  @Output() valueChosen = new EventEmitter();
+  @Output() valueChosen: EventEmitter<string> = new EventEmitter();
   
 
   @Input() value: string;

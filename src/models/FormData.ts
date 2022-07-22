@@ -4,6 +4,8 @@ import { Engine } from "./Engine";
 import { Grade } from "./Grade";
 import { Wheels } from "./Wheels";
 import { Exterior } from "./Exterior";
+import { Transmission } from "./Transmission";
+import { Interior } from "./Interior";
 
 export interface FormData {
 
@@ -18,13 +20,13 @@ export interface FormData {
 
     drivetrain: Drivetrain[];
 
-    transmission: string[];
+    transmission: Transmission[];
 
     engine: Engine[];
 
     exterior: Exterior[];
 
-    interior: string[];
+    interior: Interior[];
 
     wheels: Wheels[];
 }

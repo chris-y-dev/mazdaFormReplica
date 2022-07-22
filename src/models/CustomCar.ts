@@ -4,6 +4,8 @@ import { Engine } from "./Engine";
 import { Exterior } from "./Exterior";
 import { Grade } from "./Grade";
 import { Wheels } from "./Wheels";
+import { Interior } from "./Interior";
+import { Transmission } from "./Transmission";
 
 export interface CustomCar {
     id? : number;
@@ -14,13 +16,13 @@ export interface CustomCar {
 
     driveTrain: Drivetrain;
 
-    transmission: string;
+    transmission: Transmission;
 
     engine: Engine;
 
     exteriro: Exterior;
 
-    interior: string;
+    interior: Interior;
 
     wheels: Wheels;
 

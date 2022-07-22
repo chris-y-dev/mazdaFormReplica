@@ -9,7 +9,7 @@ export class ExteriorComponent implements OnInit {
   @Input() exteriorData: any;
   @Input() default: any;
   @Input() groupName: string;
-  @Output() exteriorSelector = new EventEmitter();
+  @Output() selectedExterior = new EventEmitter();
 
   value: string;
   constructor() { }
@@ -19,10 +19,15 @@ export class ExteriorComponent implements OnInit {
   }
 
   onSelect(value: string){
-    this.exteriorSelector.emit(value);
+    this.selectedExterior.emit(value);
 
     this.value = value;
     console.log(this.value)
+    console.log(this.groupName)
+  }
+
+  onClick(value:string){
+    console.log(value)
   }
 
 }
