@@ -1,0 +1,17 @@
+
+    <label *ngFor="let exterior of exteriorData" class="d-flex justify-content-between exteriorItem" for="{{exterior.name}}">
+        <div style="display: inline-block;">
+            {{exterior.name}}
+            <input 
+            type="radio"
+            id="{{exterior.name}}"
+            name="{{groupName}}"
+            value={{exterior.name}}
+            [(ngModel)]="value"
+            (click)="onClick(exterior.name)"
+            (change)="onSelect(exterior.name)"/>
+        </div>
+        <div style="display: inline-block;" *ngIf="exterior.price!=null">
+            +${{exterior.price}}
+        </div>
+    </label>

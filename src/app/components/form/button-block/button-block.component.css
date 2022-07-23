@@ -1,0 +1,28 @@
+.radioBtnBlock{
+    width:50%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.radioBtnBlock label{
+    width:100%;
+    
+}
+
+.radioBtnBlock .btn,
+.radioBtnBlock input{
+    width:100%;
+    height:38px;
+    cursor: pointer;
+}
+
+[type=radio]{
+    opacity: 0;
+    position:absolute
+}
+
+input[type="radio"]:checked+button {
+  background: rgb(0, 0, 120);
+  border-color: rgb(0, 0, 120);
+  color: white
+}

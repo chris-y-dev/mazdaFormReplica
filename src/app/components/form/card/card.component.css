@@ -1,0 +1,36 @@
+[type=radio]{
+    position: absolute;
+    z-index: 2;
+    right:10px;
+    top:10px;
+
+}
+
+label{
+    position:relative;
+    display:block;
+    width: 200px;
+    height: 220px;
+    margin:auto
+}
+
+label:hover{
+    cursor: pointer;
+}
+
+.card{
+    text-align: center;
+    height: inherit;
+}
+
+.card h3{
+    margin-top:30px;
+}
+
+.card ul{
+    padding:0
+}
+
+.card-additions{
+    list-style: none;
+}

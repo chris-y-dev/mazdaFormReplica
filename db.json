@@ -1,0 +1,122 @@
+{
+  "mazda3": {
+    "details": {
+      "model": "Mazda3",
+      "country": "Japan"
+    },
+    "body": [
+      {
+        "name": "Hatch",
+        "description": "Stunning, sporty and sure to catch the eye"
+      },
+      {
+        "name": "Sedan",
+        "description": "Elegance personified with a little extra cargo space"
+      }
+    ],
+    "grade": [
+      {
+        "name": "G25 Astina",
+        "description": [
+          "Bose audio",
+          "Tilt glass sun roof",
+          "Vision technology"
+        ]
+      },
+      {
+        "name": "X20 Astina",
+        "description": [
+          "Skyactive engine",
+          "Hybrid system"
+        ]
+      },
+      {
+        "name": "G25 GT",
+        "description": [
+          "Auto-fold mirrors",
+          "Heated seats and steering wheel"
+        ]
+      }
+    ],
+    "drivetrain": [
+      {
+        "name": "FWD",
+        "description": "Front wheel drive delivers the lightweight agility you need"
+      }
+    ],
+    "transmission": [
+      {
+        "name": "Manual",
+        "description": ""
+      },
+      {
+        "name": "Auto",
+        "description": ""
+      }
+    ],
+    "engine": [
+      {
+        "name": "2.5 L Petrol",
+        "description": [
+          "Max Power: 139kW @6,000rpm",
+          "Max Torque: 252Nm @4,000rpm"
+        ]
+      }
+    ],
+    "exterior": [
+      {
+        "name": "Platinum",
+        "price": 500
+      },
+      {
+        "name": "Polymetal",
+        "price": 500
+      },
+      {
+        "name": "Navy",
+        "price": 500
+      },
+      {
+        "name": "Black",
+        "price": null
+      },
+      {
+        "name": "White",
+        "price": null
+      }
+    ],
+    "interior": [
+      {
+        "name": "Black Leather",
+        "price": null
+      }
+    ],
+    "wheels": [
+      {
+        "name": "18 Inch Alloy Wheel",
+        "price": 0
+      },
+      {
+        "name": "18 Inch Silver Alloy Wheel",
+        "price": 2024
+      },
+      {
+        "name": "18 Inch Chrome Wheel",
+        "price": 2104
+      }
+    ]
+  },
+  "myBuilds": [
+    {
+      "id": 1,
+      "body": "Sedan",
+      "grade": "G25 Astina",
+      "driveTrain": "FWD",
+      "transmission": "Manual",
+      "engine": "2.5 L Petrol",
+      "exterior": "Navy",
+      "interior": "18 Inch Chrome Wheel",
+      "additionalCost": 0
+    }
+  ]
+}

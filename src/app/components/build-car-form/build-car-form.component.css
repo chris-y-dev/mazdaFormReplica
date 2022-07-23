@@ -1,0 +1,42 @@
+.form-container{
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.title,
+.model{
+    padding-left: 2rem;
+}
+
+form{
+    position: relative;
+}
+
+ .tab{
+    height: 200px;
+    display:none;
+    margin-bottom: 80px;
+ }
+
+.displayDescription{
+    padding:20px;  
+    text-align: center; 
+}
+
+.formBtn-container{
+    height: 50px;
+    padding: 10px;
+    display:block
+}
+
+#formPrevBtn{
+    float: left;
+    position: block
+}
+
+#formNextBtn,
+#formSubmitBtn
+{
+    float:right;
+    position: block;
+}

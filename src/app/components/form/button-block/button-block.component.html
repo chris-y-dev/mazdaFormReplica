@@ -1,0 +1,14 @@
+<div class="radioBtnBlock" *ngFor="let choice of choices">
+    <label for="choice.name" (click)="onClick(choice.name)">
+        <input 
+        type="radio" 
+        name="{{groupName}}"
+        value="{{choice.name}}" 
+        [(ngModel)]="value"
+        (change)="selectionChange(choice)"
+        id="{{choice.name}}">
+        <button href="#" class="btn btn-outline-secondary">
+            {{choice.name}}
+        </button>
+    </label>
+</div>
