@@ -10,20 +10,24 @@ import { Transmission } from "./Transmission";
 export interface CustomCar {
     id? : number;
 
-    body: Body;
+    body: string;
 
-    grade: Grade;
+    grade: string;
 
-    driveTrain: Drivetrain;
+    driveTrain: string;
 
-    transmission: Transmission;
+    transmission: string;
 
-    engine: Engine;
+    engine: string;
 
-    exteriro: Exterior;
+    exterior: string;
 
-    interior: Interior;
+    interior: string;
 
-    wheels: Wheels;
+    wheels?: string;
+
+    extras?: string[];
+
+    additionalCost: number;
 
 }

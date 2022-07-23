@@ -12,6 +12,8 @@ import { ButtonBlockComponent } from './components/form/button-block/button-bloc
 import { CardComponent } from './components/form/card/card.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ExteriorComponent } from './components/form/exterior/exterior.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
+import { CustomImageComponent } from './custom-image/custom-image.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ExteriorComponent } from './components/form/exterior/exterior.component
     CardComponent,
     CarouselComponent,
     ExteriorComponent,
+    ProgressbarComponent,
+    CustomImageComponent,
   ],
   imports: [
     BrowserModule,

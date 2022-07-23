@@ -1,0 +1,10 @@
+.carPreview-container{
+    width:100%;
+    position:relative;
+}
+
+.carPreview-img{
+    width:100%;
+    max-width: 600px;
+    padding:30px;
+}
