@@ -15,6 +15,7 @@ export class ExteriorComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("======DEFAULT======")
     this.onSelect(this.default.name);
   }
 

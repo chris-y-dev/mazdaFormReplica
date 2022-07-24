@@ -2,8 +2,8 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, QueryList, ViewChi
 import { FormService } from 'src/app/services/form-service.service';
 import { FormData } from 'src/models/FormData';
 import { CustomCar } from 'src/models/CustomCar';
+import { ActivatedRoute } from '@angular/router';
 
-const myChoices = document.getElementById('displayInput') as HTMLInputElement | null;
 
 @Component({
   selector: 'app-build-car-form',
@@ -12,8 +12,10 @@ const myChoices = document.getElementById('displayInput') as HTMLInputElement | 
 })
 export class BuildCarFormComponent implements OnInit, AfterViewInit {
 
-  @Input() model: string;
+  model: string = "mazda3"
   formData: FormData
+  bodyData: any;
+  additionData: any;
 
   bodyDescription: string;
   driveTrainDescription: string;
@@ -39,19 +41,27 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   @ViewChild('formSubmitBtn') formSubmitBtn: ElementRef;
   @ViewChildren('tab') tabs: QueryList<any>;
 
-  constructor(private service : FormService) {}
+  constructor(private service : FormService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+    //retrieve values from URL parameter
+    this.model = this.activatedRoute.snapshot.params['carModel'];
+
+    //Retrieve from API + assign to variable
     this.service.getFormData(this.model).subscribe( (data) => 
     { console.log(data)
-      this.formData = data});
+      this.formData = data
+      this.bodyData = data.body //this conditionally renders Body
+    });
+    
+    
 
+
+    //generate default image
     this.generateImgUrl();
   }
 
   ngAfterViewInit(): void {
-    console.log(this.formPrevBtn)
-    console.log(this.tabs)
 
     this.formSubmitBtn.nativeElement.style.display="none"
     this.showTab(this.currentTab);
@@ -62,8 +72,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectBody($event: any){
     if ($event){
       this.selectedBody= $event
-      console.log("output received")
-
       this.generateImgUrl();
     }
     console.log("PROCESSED: "+ this.selectedBody) ///YES
@@ -76,7 +84,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectGrade($event: any){
     if ($event){
       this.selectedGrade=$event
-      console.log("output received")
     }
     console.log(this.selectedGrade)
   }
@@ -84,7 +91,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectDrivetrain($event: any){
     if ($event){
       this.selectedDrivetrain= $event
-      console.log("output received")
     }
     console.log("PROCESSED: "+ this.selectedDrivetrain)
   }
@@ -96,7 +102,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectTransmission($event: any){
     if ($event){
       this.selectedTransmission= $event
-      console.log("output received")
     }
     console.log("PROCESSED: "+ this.selectedTransmission)
   }
@@ -104,7 +109,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectEngine($event: any){
     if ($event){
       this.selectedEngine= $event
-      console.log("output received")
     }
     console.log("PROCESSED: "+ this.selectedEngine)
   }
@@ -112,7 +116,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectExterior($event: any){
     if ($event){
       this.selectedExterior= $event
-      console.log("output received")
 
       this.generateImgUrl();
     }
@@ -122,7 +125,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectInterior($event: any){
     if ($event){
       this.selectedInterior= $event
-      console.log("output received")
     }
     console.log("PROCESSED: "+ this.selectedInterior)
   }
@@ -130,7 +132,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectWheels($event: any){
     if ($event){
       this.selectedWheels= $event
-      console.log("output received")
     }
     console.log("PROCESSED: "+ this.selectedWheels)
   }
@@ -150,13 +151,7 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
     }
     
     console.log("=======Submission=======")
-    console.log(this.selectedBody)
-    console.log(this.selectedGrade)
-    console.log(this.selectedDrivetrain)
-    console.log(this.selectedTransmission)
-    console.log(this.selectedEngine)
-    console.log(this.selectedExterior)
-    console.log(this.selectedInterior)
+    console.log(customCar)
     console.log("=======Submission=======")
 
 
@@ -205,9 +200,21 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   }
 
   generateImgUrl(){
-    const baseUrl = "../../assets/img/";
+    let baseUrl = "../../assets/img/";
 
-    this.imgUrl = (baseUrl + this.model + "_" + this.selectedBody + "_" + this.selectedExterior + ".jpg").toLowerCase();
+    console.log("Model: " + this.model)
+    console.log("Body: " + this.selectedBody)
+    console.log("Exterior: " + this.selectedExterior)
+
+    if (this.model){
+      baseUrl += this.model + "/" + this.model + "_"
+    } 
+
+    if (this.selectedBody){
+      baseUrl += this.selectedBody + "_"
+    }
+
+    this.imgUrl = (baseUrl += this.selectedExterior + ".jpg").toLowerCase();
   
     console.log(this.imgUrl);
   }
