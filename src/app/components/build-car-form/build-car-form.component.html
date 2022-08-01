@@ -37,37 +37,34 @@
                 [carouselData]="formData? formData.grade : null"
                 [groupName]="'selectedGrade'"
                 name="selectedGrade"
-                [(ngModel)]="selectedGrade"
                 (chosenValue)="selectGrade($event)"
                 ></app-carousel>
         </div>
         
         <div class="tab" #tab>
                 <app-button-block 
-                [choices]="formData.drivetrain"
+                [choices]="formData? formData.drivetrain : null"
                 [groupName]="'selectedDrivetrain'"
                 [default]="formData.drivetrain[0]"
                 name="selectedDrivetrain"
                 (currentDescription)="setDrivetrainDesc($event)"
-                [(ngModel)]="selectedDrivetrain"
                 (valueChosen)="selectDrivetrain($event)"
                 ></app-button-block>
                 <div class="displayDescription">{{driveTrainDescription}}</div>
         </div>
     <div class="tab" #tab>
             <app-button-block 
-            [choices]="formData.transmission"
+            [choices]="formData? formData.transmission : null"
             [groupName]="'selectedTransmission'"
             [default]="formData.transmission[0]"
             name="selectedTransmission"
-            [(ngModel)]="selectedTransmission"
             (valueChosen)="selectTransmission($event)"
             ></app-button-block>
     </div>
 
     <div class="tab" #tab> 
             <app-carousel 
-            [carouselData]="formData.engine"
+            [carouselData]="formData? formData.engine : null"
             [groupName]="'selectedEngine'"
             [slides]="formData.engine.length"
             name="selectedEngine"
@@ -78,7 +75,7 @@
     <div class="tab" #tab>
             
             <app-exterior
-            [exteriorData]="formData.exterior"
+            [exteriorData]="formData? formData.exterior : null"
             [groupName]="'selectedExterior'"
             [default]="formData.exterior[0]"
             name="selectedExterior"
@@ -88,21 +85,19 @@
 
 <div class="tab" #tab>
         <app-exterior
-        [exteriorData]="formData.interior"
+        [exteriorData]="formData? formData.interior : null"
         [groupName]="'selectedInterior'"
         [default]="formData.interior[0]"
         name="selectedInterior"
-        [ngModel]="selectedInterior"
         (selectedExterior)="selectInterior($event)"></app-exterior>
 </div>
 
 <div class="tab" #tab>
         <app-exterior
-        [exteriorData]="formData.wheels"
+        [exteriorData]="formData? formData.wheels : null"
         [groupName]="'selectedWheels'"
         [default]="formData.wheels[0]"
         name="selectedWheels"
-        [ngModel]="selectedWheels"
         (selectedExterior)="selectInterior($event)"></app-exterior>
 </div>
 

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import { FormService } from 'src/app/services/form-service.service';
 import { FormData } from 'src/models/FormData';
 import { CustomCar } from 'src/models/CustomCar';
@@ -41,7 +41,7 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   @ViewChild('formSubmitBtn') formSubmitBtn: ElementRef;
   @ViewChildren('tab') tabs: QueryList<any>;
 
-  constructor(private service : FormService, private activatedRoute: ActivatedRoute) {}
+  constructor(private service : FormService, private activatedRoute: ActivatedRoute, private changeDetector: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     //retrieve values from URL parameter
@@ -54,27 +54,31 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
       this.bodyData = data.body //this conditionally renders Body
     });
     
-    
-
-
     //generate default image
     this.generateImgUrl();
   }
 
+  //sets dispaly after all DOM elements loaded
+  //Default = No 'submit' button, show current tab, calculate total tabs.
   ngAfterViewInit(): void {
-
-    this.formSubmitBtn.nativeElement.style.display="none"
+    this.formSubmitBtn.nativeElement.style.display="none" 
     this.showTab(this.currentTab);
+
+    
     this.totalTabs = this.tabs.length;
-    console.log(this.tabs.length)
+
+    // import changeDetector -> Detects changes after initialising the view: ie the tab count was initially UNDEFINED -> But changed to 7 or 8 after view is mounted
+    this.changeDetector.detectChanges();
   }
+
+  /* Following functions retrieves the chosen form items + assigns to variable in this class*/
 
   selectBody($event: any){
     if ($event){
       this.selectedBody= $event
       this.generateImgUrl();
     }
-    console.log("PROCESSED: "+ this.selectedBody) ///YES
+    console.log("PROCESSED: "+ this.selectedBody) 
   }
 
   setBodyDescription($event: any){
@@ -85,7 +89,7 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
     if ($event){
       this.selectedGrade=$event
     }
-    console.log(this.selectedGrade)
+    console.log("PROCESSED: " + this.selectedGrade)
   }
 
   selectDrivetrain($event: any){
@@ -136,6 +140,7 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
     console.log("PROCESSED: "+ this.selectedWheels)
   }
 
+  //This retrieves all selected values -> turn into Object -> call SERVICE
   onSubmit(){
     const customCar: CustomCar = {
       id: 0,
@@ -161,8 +166,7 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   }
 
 
-
-
+  //this changes the display depending on currentTab (block or none)
   showTab(n: number){
     this.tabs.get(n).nativeElement.style.display="block";
 
@@ -181,14 +185,14 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
       this.formNextBtn.nativeElement.style.display="inline-block";
       this.formSubmitBtn.nativeElement.style.display="none"
     }
-
-    //change step indicator
   }
 
+  //this hides a tab
   hideTab(n: number){
     this.tabs.get(n).nativeElement.style.display="none";
   }
 
+  //Logic to determine tab number
   nextOrPrev(n: number){
     //HIDE
     this.hideTab(this.currentTab);
@@ -196,15 +200,12 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
     
     //SHOW
     this.showTab(this.currentTab);
-    console.log(this.currentTab)
+    console.log("Progress bar: " + this.currentTab)
   }
 
+  //takes input information and displays the corresponding image dynamically
   generateImgUrl(){
     let baseUrl = "../../assets/img/";
-
-    console.log("Model: " + this.model)
-    console.log("Body: " + this.selectedBody)
-    console.log("Exterior: " + this.selectedExterior)
 
     if (this.model){
       baseUrl += this.model + "/" + this.model + "_"
@@ -218,5 +219,4 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   
     console.log(this.imgUrl);
   }
-
 }

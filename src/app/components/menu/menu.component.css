@@ -1,0 +1,20 @@
+.menu-card{
+    width:250px;
+    height: 200px;
+    margin: 20px auto;
+    border: 1px solid rgb(198, 198, 198);
+    box-shadow: 1px 5px 15px 1px rgba(0,0,0,0.5);
+    padding: 16px;
+    display: block;
+    text-decoration: none;
+    color: Black
+}
+
+.menu-img{
+    width: 100%;
+}
+
+.menu-img + p {
+    text-align: center;
+    margin: 10px 0;
+}
