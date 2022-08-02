@@ -1,5 +1,5 @@
 <div class="form-container">
-    <h1 class="title">Custom Build</h1>
+    <h1 class="title">Customise your car</h1>
     <p class="model" *ngIf="formData">{{ formData.details.model }}</p>
     <form (ngSubmit)="onSubmit()">
         <app-progressbar
@@ -11,109 +11,94 @@
             <input type="submit" value="Submit" id="formSubmitBtn" #formSubmitBtn class="btn btn-primary"/>
             <button  type="button" id="formNextBtn" #formNextBtn class="btn btn-navy" (click)="nextOrPrev(1)">Next</button>
         </div>
-        <div id="displayInput">
+
+        <div>
             <app-custom-image
             [srcPath]="imgUrl"></app-custom-image>
         </div>
         
-        <div class="tab" #tab>
-            <div *ngIf="formData">
-                <app-button-block 
-                [choices]="formData.body"
-                [groupName]="'selectedBody'"
-                [default]="formData.body[0]"
-                name="selectedBody"
-                (valueChosen)="selectBody($event)"
-                (currentDescription)="setBodyDescription($event)"
-                ></app-button-block>
-                <div class="displayDescription">{{bodyDescription}}</div>
+        <div *ngIf="bodyData && bodyData.length>0">
+            <div class="tab" #tab>
+                    <div *ngIf="formData">
+                        <app-button-block 
+                    [choices]="formData.body"
+                    [groupName]="'selectedBody'"
+                    [default]="formData.body[0]"
+                    name="selectedBody"
+                    (valueChosen)="selectBody($event)"
+                    (currentDescription)="setBodyDescription($event)"
+                    ></app-button-block>
+                        <div class="displayDescription">{{bodyDescription}}</div>
+                    </div>
             </div>
         </div>
         <div class="tab" #tab>
-            <div *ngIf="formData.grade">
                 <app-carousel 
-                [carouselData]="formData.grade"
+                [carouselData]="formData? formData.grade : null"
                 [groupName]="'selectedGrade'"
                 name="selectedGrade"
-                [(ngModel)]="selectedGrade"
                 (chosenValue)="selectGrade($event)"
                 ></app-carousel>
-            </div>
         </div>
         
         <div class="tab" #tab>
-            <div *ngIf="formData.drivetrain">
                 <app-button-block 
-                [choices]="formData.drivetrain"
+                [choices]="formData? formData.drivetrain : null"
                 [groupName]="'selectedDrivetrain'"
                 [default]="formData.drivetrain[0]"
                 name="selectedDrivetrain"
                 (currentDescription)="setDrivetrainDesc($event)"
-                [(ngModel)]="selectedDrivetrain"
                 (valueChosen)="selectDrivetrain($event)"
                 ></app-button-block>
                 <div class="displayDescription">{{driveTrainDescription}}</div>
-            </div>
         </div>
     <div class="tab" #tab>
-        <div *ngIf="formData.transmission">
             <app-button-block 
-            [choices]="formData.transmission"
+            [choices]="formData? formData.transmission : null"
             [groupName]="'selectedTransmission'"
             [default]="formData.transmission[0]"
             name="selectedTransmission"
-            [(ngModel)]="selectedTransmission"
             (valueChosen)="selectTransmission($event)"
             ></app-button-block>
-        </div>
     </div>
-    <div class="tab" #tab>
-        <div *ngIf="formData.engine">
-            
+
+    <div class="tab" #tab> 
             <app-carousel 
-            [carouselData]="formData.engine"
+            [carouselData]="formData? formData.engine : null"
             [groupName]="'selectedEngine'"
             [slides]="formData.engine.length"
             name="selectedEngine"
             (chosenValue)="selectEngine($event)"
             ></app-carousel>
-        </div>
     </div>
     
     <div class="tab" #tab>
-        <div *ngIf="formData.exterior">
             
             <app-exterior
-            [exteriorData]="formData.exterior"
+            [exteriorData]="formData? formData.exterior : null"
             [groupName]="'selectedExterior'"
             [default]="formData.exterior[0]"
             name="selectedExterior"
             (selectedExterior)="selectExterior($event)">
         </app-exterior>
-    </div>
 </div>
 
 <div class="tab" #tab>
-    <div *ngIf="formData.interior">
         <app-exterior
-        [exteriorData]="formData.interior"
+        [exteriorData]="formData? formData.interior : null"
         [groupName]="'selectedInterior'"
         [default]="formData.interior[0]"
         name="selectedInterior"
-        [ngModel]="selectedInterior"
         (selectedExterior)="selectInterior($event)"></app-exterior>
-    </div>
 </div>
+
 <div class="tab" #tab>
-    <div *ngIf="formData.wheels">
         <app-exterior
-        [exteriorData]="formData.wheels"
+        [exteriorData]="formData? formData.wheels : null"
         [groupName]="'selectedWheels'"
         [default]="formData.wheels[0]"
         name="selectedWheels"
-        [ngModel]="selectedWheels"
         (selectedExterior)="selectInterior($event)"></app-exterior>
-    </div>
 </div>
 
 

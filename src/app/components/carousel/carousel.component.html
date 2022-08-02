@@ -1,4 +1,5 @@
 <div class="carousel carousel-dark slide" id="{{groupName}}" data-bs-ride="carousel">
+    <!-- Buttons -->
     <div class="carousel-indicators" id="{{groupName}}" >
         <button type="button" 
         *ngFor="let item of carouselData"
@@ -11,6 +12,8 @@
         <!-- <button type="button" [attr.data-bs-target]="'#'+ groupName" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" [attr.data-bs-target]="'#'+ groupName" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
     </div>
+
+    <!-- Card options -->
     <div class="carousel-inner">
                 <app-card 
                 class="carousel-item"
@@ -22,6 +25,8 @@
                 (chosenCard)="onSelectCard($event)"
                 ></app-card>
     </div>
+
+    <!-- Buttons -->
     <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#'+ groupName" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>

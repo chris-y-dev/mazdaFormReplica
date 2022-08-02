@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { ExteriorComponent } from './components/form/exterior/exterior.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
 import { CustomImageComponent } from './custom-image/custom-image.component';
+import { MenuComponent } from './components/menu/menu.component';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +29,15 @@ import { CustomImageComponent } from './custom-image/custom-image.component';
     ExteriorComponent,
     ProgressbarComponent,
     CustomImageComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

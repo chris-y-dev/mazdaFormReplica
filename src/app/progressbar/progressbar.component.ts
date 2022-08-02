@@ -13,6 +13,7 @@ export class ProgressbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.maxValue = 0;
   }
 
 }

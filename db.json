@@ -104,18 +104,281 @@
         "name": "18 Inch Chrome Wheel",
         "price": 2104
       }
+    ],
+    "extras": [
+      {
+        "name": "",
+        "description": "",
+        "price": 0
+      }
+    ]
+  },
+  "cx-30": {
+    "details": {
+      "model": "CX-30",
+      "country": "Japan"
+    },
+    "body": [],
+    "grade": [
+      {
+        "name": "G25 Touring",
+        "description": [
+          "Keyless entry",
+          "Leather seats with power adjustment",
+          "Front parking sensors"
+        ]
+      },
+      {
+        "name": "G25 Touring SP",
+        "description": [
+          "Leather seats",
+          "Alloy wheels"
+        ]
+      },
+      {
+        "name": "G25 Astina",
+        "description": [
+          "Vision technology",
+          "Tilt glass sun roof"
+        ]
+      },
+      {
+        "name": "X20 Astina",
+        "description": [
+          "M Hybrid System",
+          "Skyactive engine"
+        ]
+      }
+    ],
+    "drivetrain": [
+      {
+        "name": "FWD",
+        "description": "Front wheel drive delivers the lightweight agility you need"
+      },
+      {
+        "name": "AWD",
+        "description": "All wheel drive for advanced traction and grip, for all road conditions."
+      }
+    ],
+    "transmission": [
+      {
+        "name": "Auto",
+        "description": ""
+      }
+    ],
+    "engine": [
+      {
+        "name": "2.5 L Petrol",
+        "description": [
+          "Max Power: 139kW @6,000rpm",
+          "Max Torque: 252Nm @4,000rpm"
+        ]
+      }
+    ],
+    "exterior": [
+      {
+        "name": "Red",
+        "price": 595
+      },
+      {
+        "name": "Polymetal",
+        "price": 500
+      },
+      {
+        "name": "Navy",
+        "price": 500
+      },
+      {
+        "name": "Black",
+        "price": null
+      },
+      {
+        "name": "White",
+        "price": null
+      }
+    ],
+    "interior": [
+      {
+        "name": "Black Leather",
+        "price": null
+      },
+      {
+        "name": "Pure White Leather",
+        "price": null
+      }
+    ],
+    "wheels": [
+      {
+        "name": "18 Inch Alloy Wheel",
+        "price": 0
+      },
+      {
+        "name": "18 Inch Silver Alloy Wheel",
+        "price": 2024
+      },
+      {
+        "name": "18 Inch Chrome Wheel",
+        "price": 2104
+      }
+    ]
+  },
+  "mazda6": {
+    "details": {
+      "model": "Mazda6",
+      "country": "Japan"
+    },
+    "body": [
+      {
+        "name": "Sedan",
+        "description": "Sleek, stylish and beautifully crafted"
+      },
+      {
+        "name": "Wagon",
+        "description": "Taking space and luxury to the max"
+      }
+    ],
+    "grade": [
+      {
+        "name": "Sport",
+        "description": [
+          "Active Driving Display",
+          "Radat Cruise Control",
+          "Satellite Navigation"
+        ]
+      },
+      {
+        "name": "Touring",
+        "description": [
+          "Leather Seats",
+          "Premium Bose Audio"
+        ]
+      },
+      {
+        "name": "GT SP",
+        "description": [
+          "Alloy Wheels",
+          "Heated Seats"
+        ]
+      },
+      {
+        "name": "Atenza",
+        "description": [
+          "360 View Monitor",
+          "Ventilated Front Seats"
+        ]
+      }
+    ],
+    "drivetrain": [
+      {
+        "name": "FWD",
+        "description": "Front wheel drive delivers the lightweight agility you need"
+      }
+    ],
+    "transmission": [
+      {
+        "name": "Auto",
+        "description": ""
+      }
+    ],
+    "engine": [
+      {
+        "name": "2.5 L Petrol",
+        "description": [
+          "Max Power: 170kW @5,000rpm",
+          "Max Torque: 420Nm @2,000rpm"
+        ]
+      }
+    ],
+    "exterior": [
+      {
+        "name": "Polymetal",
+        "price": 695
+      },
+      {
+        "name": "Navy",
+        "price": 695
+      },
+      {
+        "name": "Black",
+        "price": null
+      },
+      {
+        "name": "White",
+        "price": null
+      },
+      {
+        "name": "Red",
+        "price": 695
+      }
+    ],
+    "interior": [
+      {
+        "name": "Walnut Leather",
+        "price": null
+      },
+      {
+        "name": "White Leather",
+        "price": null
+      }
+    ],
+    "wheels": [
+      {
+        "name": "18 Inch Alloy Wheel",
+        "price": 0
+      },
+      {
+        "name": "18 Inch Silver Alloy Wheel",
+        "price": 2024
+      },
+      {
+        "name": "18 Inch Chrome Wheel",
+        "price": 2104
+      }
+    ],
+    "extras": [
+      {
+        "name": "Coloured Key Shell - Aluminium",
+        "description": "",
+        "price": 77
+      },
+      {
+        "name": "Floor Mats",
+        "description": "",
+        "price": 252
+      },
+      {
+        "name": "Mud Guards",
+        "description": "",
+        "price": 194
+      },
+      {
+        "name": "Cargo Illuminator",
+        "description": "",
+        "price": 228
+      }
     ]
   },
   "myBuilds": [
     {
       "id": 1,
-      "body": "Sedan",
+      "body": "Hatch",
+      "grade": "G25 Astina",
+      "driveTrain": "FWD",
+      "transmission": "Auto",
+      "engine": "2.5 L Petrol",
+      "exterior": "White",
+      "interior": "18 Inch Alloy Wheel",
+      "additionalCost": 0
+    },
+    {
+      "id": 2,
+      "body": "Hatch",
       "grade": "G25 Astina",
       "driveTrain": "FWD",
       "transmission": "Manual",
       "engine": "2.5 L Petrol",
-      "exterior": "Navy",
-      "interior": "18 Inch Chrome Wheel",
+      "exterior": "Platinum",
+      "interior": "18 Inch Alloy Wheel",
       "additionalCost": 0
     }
   ]
