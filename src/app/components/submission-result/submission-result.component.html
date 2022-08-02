@@ -1,0 +1,15 @@
+<div>
+    <h1>Your custom car</h1>
+    <app-custom-image [srcPath]="imgUrl"></app-custom-image>
+    <div *ngIf="submittedCarData" class="data_container">
+        <p>Model: {{submittedCarData.model}}</p>
+        <p *ngIf="submittedCarData.body">Body: {{submittedCarData.body}}</p>
+        <p>Grade: {{submittedCarData.grade}}</p>
+        <p>Drivetrain: {{submittedCarData.driveTrain}}</p>
+        <p>Engine: {{submittedCarData.engine}}</p>
+        <p>Transmission: {{submittedCarData.transmission}}</p>
+        <p>Wheels: {{submittedCarData.wheels}}</p>
+        <p>Exterior: {{submittedCarData.exterior}}</p>
+        <p>Interior: {{submittedCarData.interior}}</p>
+    </div>
+</div>

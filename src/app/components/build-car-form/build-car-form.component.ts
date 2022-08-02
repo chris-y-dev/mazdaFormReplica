@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-import { AfterViewInit, Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
-import { FormService } from 'src/app/services/form-service.service';
-import { FormData } from 'src/models/FormData';
-import { CustomCar } from 'src/models/CustomCar';
-
-const myChoices = document.getElementById('displayInput') as HTMLInputElement | null;
-=======
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import { FormService } from 'src/app/services/form-service.service';
 import { FormData } from 'src/models/FormData';
 import { CustomCar } from 'src/models/CustomCar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
 
 @Component({
   selector: 'app-build-car-form',
@@ -21,15 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BuildCarFormComponent implements OnInit, AfterViewInit {
 
-<<<<<<< HEAD
-  @Input() model: string;
-  formData: FormData
-=======
   model: string = "mazda3"
   formData: FormData
   bodyData: any;
   additionData: any;
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
 
   bodyDescription: string;
   driveTrainDescription: string;
@@ -55,7 +41,7 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   @ViewChild('formSubmitBtn') formSubmitBtn: ElementRef;
   @ViewChildren('tab') tabs: QueryList<any>;
 
-  constructor(private service : FormService, private activatedRoute: ActivatedRoute, private changeDetector: ChangeDetectorRef) {}
+  constructor(private service : FormService, private activatedRoute: ActivatedRoute, private changeDetector: ChangeDetectorRef, private router: Router) {}
 
   ngOnInit(): void {
     //retrieve values from URL parameter
@@ -102,23 +88,13 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectGrade($event: any){
     if ($event){
       this.selectedGrade=$event
-<<<<<<< HEAD
-      console.log("output received")
-    }
-    console.log(this.selectedGrade)
-=======
     }
     console.log("PROCESSED: " + this.selectedGrade)
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
   }
 
   selectDrivetrain($event: any){
     if ($event){
       this.selectedDrivetrain= $event
-<<<<<<< HEAD
-      console.log("output received")
-=======
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
     }
     console.log("PROCESSED: "+ this.selectedDrivetrain)
   }
@@ -130,10 +106,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectTransmission($event: any){
     if ($event){
       this.selectedTransmission= $event
-<<<<<<< HEAD
-      console.log("output received")
-=======
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
     }
     console.log("PROCESSED: "+ this.selectedTransmission)
   }
@@ -141,10 +113,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectEngine($event: any){
     if ($event){
       this.selectedEngine= $event
-<<<<<<< HEAD
-      console.log("output received")
-=======
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
     }
     console.log("PROCESSED: "+ this.selectedEngine)
   }
@@ -152,10 +120,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectExterior($event: any){
     if ($event){
       this.selectedExterior= $event
-<<<<<<< HEAD
-      console.log("output received")
-=======
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
 
       this.generateImgUrl();
     }
@@ -165,10 +129,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectInterior($event: any){
     if ($event){
       this.selectedInterior= $event
-<<<<<<< HEAD
-      console.log("output received")
-=======
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
     }
     console.log("PROCESSED: "+ this.selectedInterior)
   }
@@ -176,21 +136,15 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   selectWheels($event: any){
     if ($event){
       this.selectedWheels= $event
-<<<<<<< HEAD
-      console.log("output received")
-=======
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
     }
     console.log("PROCESSED: "+ this.selectedWheels)
   }
 
-<<<<<<< HEAD
-=======
   //This retrieves all selected values -> turn into Object -> call SERVICE
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
   onSubmit(){
     const customCar: CustomCar = {
       id: 0,
+      model: this.model,
       body: this.selectedBody,
       grade: this.selectedGrade,
       driveTrain: this.selectedDrivetrain,
@@ -203,32 +157,25 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
     }
     
     console.log("=======Submission=======")
-<<<<<<< HEAD
-    console.log(this.selectedBody)
-    console.log(this.selectedGrade)
-    console.log(this.selectedDrivetrain)
-    console.log(this.selectedTransmission)
-    console.log(this.selectedEngine)
-    console.log(this.selectedExterior)
-    console.log(this.selectedInterior)
-=======
     console.log(customCar)
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
-    console.log("=======Submission=======")
 
 
+    //After submission, re-route to display custom car build
     this.service.submitForm(customCar).subscribe((result)=>{
       console.log(result);
+
+      var submissionRoute = '/build/submission/'+result.id
+
+      this.router.navigate([submissionRoute])
     });
+
+
+
+
   }
 
 
-<<<<<<< HEAD
-
-
-=======
   //this changes the display depending on currentTab (block or none)
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
   showTab(n: number){
     this.tabs.get(n).nativeElement.style.display="block";
 
@@ -247,24 +194,14 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
       this.formNextBtn.nativeElement.style.display="inline-block";
       this.formSubmitBtn.nativeElement.style.display="none"
     }
-<<<<<<< HEAD
-
-    //change step indicator
-  }
-
-=======
   }
 
   //this hides a tab
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
   hideTab(n: number){
     this.tabs.get(n).nativeElement.style.display="none";
   }
 
-<<<<<<< HEAD
-=======
   //Logic to determine tab number
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
   nextOrPrev(n: number){
     //HIDE
     this.hideTab(this.currentTab);
@@ -272,19 +209,6 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
     
     //SHOW
     this.showTab(this.currentTab);
-<<<<<<< HEAD
-    console.log(this.currentTab)
-  }
-
-  generateImgUrl(){
-    const baseUrl = "../../assets/img/";
-
-    this.imgUrl = (baseUrl + this.model + "_" + this.selectedBody + "_" + this.selectedExterior + ".jpg").toLowerCase();
-  
-    console.log(this.imgUrl);
-  }
-
-=======
     console.log("Progress bar: " + this.currentTab)
   }
 
@@ -304,5 +228,4 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   
     console.log(this.imgUrl);
   }
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
 }

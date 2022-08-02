@@ -380,6 +380,98 @@
       "exterior": "Platinum",
       "interior": "18 Inch Alloy Wheel",
       "additionalCost": 0
+    },
+    {
+      "id": 3,
+      "grade": "X20 Astina",
+      "driveTrain": "AWD",
+      "transmission": "Auto",
+      "engine": "2.5 L Petrol",
+      "exterior": "Black",
+      "interior": "18 Inch Chrome Wheel",
+      "additionalCost": 0
+    },
+    {
+      "id": 4,
+      "grade": "G25 Touring",
+      "driveTrain": "FWD",
+      "transmission": "Auto",
+      "engine": "2.5 L Petrol",
+      "exterior": "White",
+      "interior": "18 Inch Chrome Wheel",
+      "additionalCost": 0
+    },
+    {
+      "id": 5,
+      "model": "cx-30",
+      "grade": "G25 Touring",
+      "driveTrain": "FWD",
+      "transmission": "Auto",
+      "engine": "2.5 L Petrol",
+      "exterior": "Red",
+      "interior": "18 Inch Alloy Wheel",
+      "additionalCost": 0
+    },
+    {
+      "id": 6,
+      "model": "mazda3",
+      "body": "Sedan",
+      "grade": "G25 Astina",
+      "driveTrain": "FWD",
+      "transmission": "Manual",
+      "engine": "2.5 L Petrol",
+      "exterior": "Navy",
+      "interior": "18 Inch Alloy Wheel",
+      "additionalCost": 0
+    },
+    {
+      "id": 7,
+      "model": "cx-30",
+      "grade": "G25 Touring",
+      "driveTrain": "FWD",
+      "transmission": "Auto",
+      "engine": "2.5 L Petrol",
+      "exterior": "Red",
+      "interior": "18 Inch Silver Alloy Wheel",
+      "additionalCost": 0
+    },
+    {
+      "id": 8,
+      "model": "cx-30",
+      "grade": "G25 Touring",
+      "driveTrain": "FWD",
+      "transmission": "Auto",
+      "engine": "2.5 L Petrol",
+      "exterior": "Red",
+      "interior": "Black Leather",
+      "wheels": "18 Inch Alloy Wheel",
+      "additionalCost": 0
+    },
+    {
+      "id": 9,
+      "model": "mazda3",
+      "body": "Sedan",
+      "grade": "G25 Astina",
+      "driveTrain": "FWD",
+      "transmission": "Manual",
+      "engine": "2.5 L Petrol",
+      "exterior": "Platinum",
+      "interior": "Black Leather",
+      "wheels": "18 Inch Alloy Wheel",
+      "additionalCost": 0
+    },
+    {
+      "id": 10,
+      "model": "mazda6",
+      "body": "Wagon",
+      "grade": "Sport",
+      "driveTrain": "FWD",
+      "transmission": "Auto",
+      "engine": "2.5 L Petrol",
+      "exterior": "Red",
+      "interior": "White Leather",
+      "wheels": "18 Inch Silver Alloy Wheel",
+      "additionalCost": 0
     }
   ]
 }

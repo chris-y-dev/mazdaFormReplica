@@ -16,6 +16,7 @@ import { ExteriorComponent } from './components/form/exterior/exterior.component
 import { ProgressbarComponent } from './progressbar/progressbar.component';
 import { CustomImageComponent } from './custom-image/custom-image.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { SubmissionResultComponent } from './components/submission-result/submission-result.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { MenuComponent } from './components/menu/menu.component';
     ProgressbarComponent,
     CustomImageComponent,
     MenuComponent,
+    SubmissionResultComponent,
   ],
   imports: [
     BrowserModule,

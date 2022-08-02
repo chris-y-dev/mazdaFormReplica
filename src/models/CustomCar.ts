@@ -10,6 +10,8 @@ import { Transmission } from "./Transmission";
 export interface CustomCar {
     id? : number;
 
+    model: string;
+
     body: string;
 
     grade: string;

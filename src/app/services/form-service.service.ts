@@ -35,4 +35,10 @@ export class FormService {
     return this.http.post<CustomCar>(buildUrl, submission, httpOptions);
   }
 
+  retrieveSubmission(id: number): Observable<CustomCar>{
+    const getUrl = this.url + "myBuilds/" + id;
+
+    return this.http.get<CustomCar>(getUrl)
+  }
+
 }

@@ -6,10 +6,7 @@ import { Wheels } from "./Wheels";
 import { Exterior } from "./Exterior";
 import { Transmission } from "./Transmission";
 import { Interior } from "./Interior";
-<<<<<<< HEAD
-=======
 import { Extra } from "./Extra";
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
 
 export interface FormData {
 
@@ -33,11 +30,8 @@ export interface FormData {
     interior: Interior[];
 
     wheels: Wheels[];
-<<<<<<< HEAD
-=======
 
     extras: Extra[];
->>>>>>> ca23571ba0c9fe3317aa8f9e30c06d650f66f9f5
 }
 
 
