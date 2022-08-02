@@ -1,5 +1,5 @@
 <div class="form-container">
-    <h1 class="title">Customised Build</h1>
+    <h1 class="title">Custom Build</h1>
     <p class="model" *ngIf="formData">{{ formData.details.model }}</p>
     <form (ngSubmit)="onSubmit()">
         <app-progressbar
@@ -43,15 +43,16 @@
         
         <div class="tab" #tab>
             <div *ngIf="formData.drivetrain">
-                
                 <app-button-block 
                 [choices]="formData.drivetrain"
                 [groupName]="'selectedDrivetrain'"
                 [default]="formData.drivetrain[0]"
                 name="selectedDrivetrain"
+                (currentDescription)="setDrivetrainDesc($event)"
                 [(ngModel)]="selectedDrivetrain"
                 (valueChosen)="selectDrivetrain($event)"
                 ></app-button-block>
+                <div class="displayDescription">{{driveTrainDescription}}</div>
             </div>
         </div>
     <div class="tab" #tab>

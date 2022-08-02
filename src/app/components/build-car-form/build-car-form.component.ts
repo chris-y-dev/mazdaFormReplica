@@ -16,6 +16,9 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
   formData: FormData
 
   bodyDescription: string;
+  driveTrainDescription: string;
+
+
   selectedBody: string;
   selectedGrade: string;
   selectedDrivetrain: string;
@@ -84,6 +87,10 @@ export class BuildCarFormComponent implements OnInit, AfterViewInit {
       console.log("output received")
     }
     console.log("PROCESSED: "+ this.selectedDrivetrain)
+  }
+
+  setDrivetrainDesc($event: any){
+    this.driveTrainDescription = $event;
   }
 
   selectTransmission($event: any){
